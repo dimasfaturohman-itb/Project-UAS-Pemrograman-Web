@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #0d6efd;
+    --teal: #14b8a6;
+    --ink: #163047;
+    --muted: #64748b;
+    --soft: #f3f8fb;
+    --sidebar: #0f3558;
+}
+
+* { letter-spacing: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+    background: #f6fbfd;
+}
+
+a { text-decoration: none; }
+
+.btn, .card, .form-control, .form-select, .alert, .modal-content {
+    border-radius: 14px;
+}
+
+.btn {
+    font-weight: 600;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.shadow-soft {
+    box-shadow: 0 14px 35px rgba(15, 53, 88, .08);
+}
+
+.hero {
+    min-height: 92vh;
+    background:
+        linear-gradient(120deg, rgba(13, 110, 253, .90), rgba(20, 184, 166, .78)),
+        url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80') center/cover;
+    color: #fff;
+}
+
+.hero .container { padding-top: 120px; padding-bottom: 80px; }
+
+.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .28);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+}
+
+.feature-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--teal));
+    border-radius: 16px;
+    font-size: 1.5rem;
+}
+
+.auth-shell {
+    min-height: 100vh;
+    background:
+        linear-gradient(135deg, rgba(13, 110, 253, .12), rgba(20, 184, 166, .14)),
+        #f7fbff;
+}
+
+.dashboard-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #0f3558, #0c4a6e);
+    color: #dff7ff;
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1040;
+    padding: 22px;
+    transition: transform .2s ease;
+}
+
+.sidebar-brand {
+    color: #fff;
+    font-weight: 800;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.sidebar .nav-link {
+    color: #c7e8f5;
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 7px;
+    transition: background .16s ease, color .16s ease, transform .16s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: rgba(255, 255, 255, .14);
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.main-content {
+    width: 100%;
+    margin-left: 280px;
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 74px;
+    background: rgba(255, 255, 255, .88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(15, 53, 88, .08);
+}
+
+.content-wrap { padding: 28px; }
+
+.stat-card {
+    border: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-card::after {
+    content: "";
+    width: 90px;
+    height: 90px;
+    border-radius: 28px;
+    background: rgba(20, 184, 166, .12);
+    position: absolute;
+    right: -20px;
+    bottom: -28px;
+    transform: rotate(18deg);
+}
+
+.table > :not(caption) > * > * {
+    vertical-align: middle;
+}
+
+.badge-status {
+    border-radius: 999px;
+    padding: .45rem .75rem;
+}
+
+.map-box {
+    height: 430px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 53, 88, .08);
+}
+
+.report-photo {
+    width: 86px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+@media (max-width: 991px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.show { transform: translateX(0); }
+    .main-content { margin-left: 0; }
+    .content-wrap { padding: 18px; }
+    .hero .container { padding-top: 92px; }
+}
+.chart-card {
+    height: 298px;
+}
+
+.chart-card .card-body {
+    height: 100%;
+}
+
+.chart-wrap {
+    height: 220px;
+    position: relative;
+}
+
+.chart-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
